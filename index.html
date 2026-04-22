@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+    <script>
+      (function () {
+        const savedMode = localStorage.getItem("mode") || "dark-mode";
+        document.addEventListener("DOMContentLoaded", function () {
+          document.body.classList.add(savedMode);
+        });
+      })();
+    </script>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <div class="check-icon"></div>
+            <h1 class="gradient-text">TaskFlow</h1>
+          </div>
+
+          <div class="mode">
+            <div class="mode-icon"></div>
+            <div class="before"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Start Statistics Section -->
+    <section class="statistics-section">
+      <div class="container">
+        <div class="logo-and-title">
+          <h1 class="title">My Tasks</h1>
+          <img src="images/vecteezy_unique-note-book-pencil-3d-icon-concept-isolated-on-vector_8096006-removebg-preview.png" width="50" alt="">
+        </div>
+        <div class="statistics">
+          <span class="active-tasks">4 active </span>&nbsp<span
+            class="completed-tasks"
+          >
+            1 completed </span
+          >&nbsp<span class="total-tasks">5 total</span>
+        </div>
+      </div>
+    </section>
+    <!-- End Statistics Section -->
+    <!--Start Add Task Input -->
+    <section class="input-section">
+      <div class="container">
+        <div class="input-container">
+          <form action="#" onsubmit="return false;">
+            <div class="add-task">
+              <div class="add-task-input">
+                <input
+                  type="text"
+                  id="taskInput"
+                  name="taskInput"
+                  placeholder="Add a new task..."
+                />
+                <button id="add-btn">
+                  <i class="fa-regular fa-square-plus"></i> <span>Add</span>
+                </button>
+              </div>
+              <div class="expanded-area">
+                <div class="hr"></div>
+                <div class="select-date">
+                  <p>Due Date</p>
+                  <input type="date" name="date" id="dateInput" />
+                </div>
+                <div class="priority">
+                  <p>Priority</p>
+                  <div class="priority-btns">
+                    <button>
+                      <div class="angle-high-img"></div>
+                      <span>High</span>
+                    </button>
+                    <button class="active">
+                      <div class="angle-up-img"></div>
+                      <span>Medium</span>
+                    </button>
+                    <button>
+                      <div class="angle-down-img"></div>
+                      <span>Low</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--End Add Task Input -->
+    <!-- start search and filter section -->
+    <section class="filters">
+      <div class="container">
+        <form action="#">
+          <div class="search-input">
+            <i class="fa-solid fa-magnifying-glass search"></i>
+            <input type="search" placeholder="Search tasks..." />
+          </div>
+
+          <div class="select-container">
+            <div class="select-wrapper">
+              <i class="fa-solid fa-filter"></i>
+              <select id="taskFilter">
+                <option value="all">All Tasks</option>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+            <div class="select-wrapper">
+              <i class="fa-solid fa-arrow-up-short-wide"></i>
+              <select id="orderFilter">
+                <option value="oldest">Oldest First</option>
+                <option value="newest">Newest First</option>
+                <option value="priority-high">Priority (High to Low)</option>
+                <option value="priority-low">Priority (Low to High)</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- End search and filter section -->
+    <!-- Start Tasks -->
+    <section class="taskes-section">
+      <div class="container">
+        <div class="tasks">
+          <div class="no-tasks">
+            <div class="no-tasks-img"></div>
+            <h2>No tasks found</h2>
+            <p>Create a new task to get started!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Tasks -->
+    <!-- Start notification  -->
+    <div class="notification">
+      <i class="fa-regular fa-circle-check"></i>
+      <p></p>
+    </div>
+    <!-- End notification -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
